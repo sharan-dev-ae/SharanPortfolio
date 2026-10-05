@@ -1,0 +1,54 @@
+name: Automated Portfolio Activity
+
+on:
+  schedule:
+    # Runs at 08:17 UTC; the UTC day parity check below selects alternate days.
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automated-portfolio-activity
+  cancel-in-progress: false
+
+jobs:
+  activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check alternate-day schedule
+        id: day
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] || (( ($(date -u +%s) / 86400) % 2 == 0 )); then
+            echo "run_today=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_today=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping this UTC day."
+          fi
+
+      - name: Check out main
+        if: steps.day.outputs.run_today == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Create 4–7 transparent activity commits
+        if: steps.day.outputs.run_today == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --ff-only origin main
+          git config user.name "sharan-dev-ae"
+          git config user.email "156191048+sharan-dev-ae@users.noreply.github.com"
+
+          count=$(shuf -i 4-7 -n 1)
+          for ((i = 1; i <= count; i++)); do
+            printf '%s | run %s | entry %s/%s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$GITHUB_RUN_ID" "$i" "$count" >> automation/activity-log.md
+            git add automation/activity-log.md
+            git commit -m "chore: record automated portfolio activity ${i}/${count}"
+          done
+
+          git push origin HEAD:main
