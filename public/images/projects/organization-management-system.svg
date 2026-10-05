@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Abstract organization structure illustration">
+  <rect width="1200" height="675" fill="#12151a"/>
+  <g stroke="#303747" fill="none" stroke-width="2"><path d="M600 224V318M285 318H915M285 318V390M600 318V390M915 318V390"/></g>
+  <g fill="#1d232d" stroke="#3b455b" stroke-width="2"><rect x="465" y="130" width="270" height="95" rx="8"/><rect x="155" y="390" width="260" height="115" rx="8"/><rect x="470" y="390" width="260" height="115" rx="8"/><rect x="785" y="390" width="260" height="115" rx="8"/></g>
+  <g fill="#a5b4fc"><circle cx="505" cy="170" r="11"/><circle cx="195" cy="431" r="11"/><circle cx="510" cy="431" r="11"/><circle cx="825" cy="431" r="11"/></g>
+  <g fill="#64718e"><rect x="530" y="164" width="105" height="9" rx="4"/><rect x="220" y="423" width="90" height="9" rx="4"/><rect x="535" y="423" width="90" height="9" rx="4"/><rect x="850" y="423" width="90" height="9" rx="4"/></g>
+  <g fill="#323b4c"><rect x="220" y="448" width="145" height="7" rx="3"/><rect x="535" y="448" width="145" height="7" rx="3"/><rect x="850" y="448" width="145" height="7" rx="3"/></g>
+</svg>

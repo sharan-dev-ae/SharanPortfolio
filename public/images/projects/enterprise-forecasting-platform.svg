@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Abstract forecasting illustration">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17191f"/><stop offset="1" stop-color="#0e1014"/></linearGradient><linearGradient id="line" x2="1" y2="0"><stop stop-color="#7c8ccf"/><stop offset="1" stop-color="#b4bdf0"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g stroke="#30343f" stroke-width="1" opacity=".75"><path d="M0 112H1200M0 225H1200M0 338H1200M0 451H1200M0 564H1200"/><path d="M150 0V675M300 0V675M450 0V675M600 0V675M750 0V675M900 0V675M1050 0V675"/></g>
+  <path d="M75 515 C170 500 220 458 310 468 S475 390 560 412 S720 315 810 340 S980 220 1120 175" fill="none" stroke="#3e486c" stroke-width="32" opacity=".17"/>
+  <path d="M75 515 C170 500 220 458 310 468 S475 390 560 412 S720 315 810 340 S980 220 1120 175" fill="none" stroke="url(#line)" stroke-width="3"/>
+  <g fill="#b4bdf0"><circle cx="310" cy="468" r="6"/><circle cx="560" cy="412" r="6"/><circle cx="810" cy="340" r="6"/><circle cx="1120" cy="175" r="6"/></g>
+  <rect x="72" y="70" width="145" height="29" rx="3" fill="#252a38" stroke="#39415b"/><rect x="82" y="81" width="72" height="7" rx="3" fill="#7987af"/>
+  <path d="M0 674H1200" stroke="#27272a"/>
+</svg>

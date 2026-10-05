@@ -1,0 +1,22 @@
+export const siteConfig = {
+  name: "Sharan Kuniyil Shaji",
+  developerName: "Sharan Kuniyil Shaji",
+  wordmark: "Sharan",
+  role: "Senior Full-Stack Software Engineer",
+  currentRole: "Senior Software Developer",
+  currentCompany: "NAFFCO FZCO",
+  location: "Dubai, UAE",
+  engineeringExperience: "5+ Years",
+  uaeExperience: "3+ Years",
+  primaryDomain: "Enterprise Software",
+  primaryStack: [".NET", "Angular", "SQL Server", "TypeScript"],
+  description:
+    "Sharan Kuniyil Shaji is a senior full-stack software engineer in Dubai, building enterprise applications with .NET, Angular, SQL Server, and TypeScript.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  email: "sharansrn007@gmail.com",
+  whatsapp: "https://wa.me/971509804082",
+  github: "https://github.com/sharan-dev-ae",
+  linkedin: "https://www.linkedin.com/in/sharan-k-shaji-dev/",
+  instagram: "https://www.instagram.com/sharan.k.shaji/",
+  resumePath: "/resume",
+} as const;
