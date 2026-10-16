@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { AssistantLauncher } from "@/components/assistant/AssistantLauncher";
@@ -38,6 +39,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <AssistantLauncher />
+        <Analytics />
       </body>
     </html>
   );
