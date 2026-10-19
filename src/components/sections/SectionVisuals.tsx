@@ -11,8 +11,10 @@ import {
   Database,
   Gauge,
   Layers3,
+  Network,
   Search,
   Sparkles,
+  UsersRound,
   Workflow,
 } from "lucide-react";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
@@ -196,67 +198,156 @@ export function ExpertiseVisual() {
   const layers = [
     {
       label: "Experience",
-      tech: "Angular · React",
+      tech: "Frontend + UX",
       icon: Layers3,
       color: "text-sky-300",
       title: "Frontend Engineering",
       description:
-        "Responsive interfaces that turn complex workflows into clear, usable experiences.",
+        "I turn complex enterprise workflows into responsive, maintainable interfaces with clear hierarchy, reusable patterns, and strong interaction design.",
       capabilities: [
         "Component architecture",
-        "Enterprise workflows",
-        "Dashboards & data UI",
-        "Responsive interaction",
+        "Enterprise forms and workflows",
+        "Dashboards and data-heavy UI",
+        "Responsive and cross-platform experiences",
+        "Performance and reusable UI systems",
       ],
-      tools: ["Angular", "TypeScript", "React", "Next.js"],
+      tools: [
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "React Native",
+        "HTML",
+        "CSS",
+      ],
     },
     {
       label: "Application",
-      tech: ".NET · APIs",
+      tech: ".NET + services",
       icon: Braces,
       color: "text-violet-300",
       title: "Application Engineering",
       description:
-        "Reliable services, business rules, and integrations shaped around real operational processes.",
+        "I design APIs and backend services that translate detailed business rules into secure, testable, and maintainable application behavior.",
       capabilities: [
-        "REST API design",
-        "Business logic",
-        "Role-based workflows",
-        "Service integration",
+        "REST API and service design",
+        "Business rules and validations",
+        "Authentication and authorization",
+        "Role-based workflow services",
+        "Real-time application behavior",
       ],
-      tools: [".NET", "ASP.NET Core", "C#", "SignalR"],
+      tools: [
+        "ASP.NET Core",
+        "C#",
+        "REST APIs",
+        "Dapper",
+        "SignalR",
+        "Node.js",
+        "Python",
+        "Django",
+        "Flask",
+      ],
     },
     {
       label: "Data",
-      tech: "SQL Server",
+      tech: "SQL + performance",
       icon: Database,
       color: "text-amber-300",
-      title: "Data & SQL",
+      title: "Data & Performance",
       description:
-        "Structured data models and performance-aware queries behind high-volume enterprise systems.",
+        "I own the data layer behind high-volume workflows, from schema and calculation design to stored procedures, reporting, and production performance tuning.",
       capabilities: [
-        "Database design",
-        "Stored procedures",
-        "Query optimization",
-        "Reporting data",
+        "Relational data modelling",
+        "Complex T-SQL and stored procedures",
+        "Bulk operations and calculations",
+        "Query and database optimization",
+        "Reporting and analytical data",
       ],
-      tools: ["SQL Server", "Dapper", "EF Core", "Data modelling"],
+      tools: [
+        "SQL Server",
+        "T-SQL",
+        "Stored Procedures",
+        "Dapper",
+        "Entity Framework Core",
+        "MongoDB",
+        "MySQL",
+      ],
+    },
+    {
+      label: "Architecture",
+      tech: "Systems + integration",
+      icon: Network,
+      color: "text-fuchsia-300",
+      title: "Architecture & Integration",
+      description:
+        "I connect modules, services, data, and teams into enterprise systems that can evolve without losing ownership, traceability, or operational clarity.",
+      capabilities: [
+        "Enterprise system design",
+        "Microservices and serverless patterns",
+        "Cross-module and REST integration",
+        "Role-based workflow architecture",
+        "Real-time and event-driven flows",
+      ],
+      tools: [
+        "System Design",
+        "Microservices",
+        "REST Integration",
+        "SignalR",
+        "Serverless",
+        "AWS Lambda",
+        "Load Balancing",
+      ],
     },
     {
       label: "Delivery",
-      tech: "Cloud · CI/CD",
+      tech: "DevOps + production",
       icon: CloudUpload,
       color: "text-emerald-300",
-      title: "Delivery & Architecture",
+      title: "DevOps & Production Reliability",
       description:
-        "Connected architecture and repeatable delivery practices that take products beyond local development.",
+        "I take applications from source control to reliable production releases with controlled pipelines, hosting, monitoring, verification, and recovery.",
       capabilities: [
-        "CI/CD pipelines",
-        "Cloud deployment",
-        "System architecture",
-        "Release reliability",
+        "CI/CD pipeline architecture",
+        "Self-hosted build automation",
+        "IIS and cloud deployment",
+        "Production monitoring and support",
+        "Backup, verification, and rollback",
       ],
-      tools: ["AWS", "Docker", "Jenkins", "IIS"],
+      tools: [
+        "GitHub Actions",
+        "Self-Hosted Runners",
+        "IIS",
+        "Docker",
+        "Jenkins",
+        "AWS Lambda",
+        "Git",
+        "Linux",
+      ],
+    },
+    {
+      label: "Leadership",
+      tech: "People + delivery",
+      icon: UsersRound,
+      color: "text-rose-300",
+      title: "Technical Leadership",
+      description:
+        "I combine hands-on engineering ownership with the coordination needed to move complex work from business requirements into dependable production systems.",
+      capabilities: [
+        "Technical guidance and mentoring",
+        "Code reviews and quality direction",
+        "Task allocation and delivery coordination",
+        "Business-to-technical translation",
+        "Production issue ownership",
+      ],
+      tools: [
+        "JIRA",
+        "Postman",
+        "Visual Studio",
+        "VS Code",
+        "AI-Assisted Development",
+        "Agile Delivery",
+      ],
     },
   ];
 
@@ -274,7 +365,7 @@ export function ExpertiseVisual() {
 
   return (
     <div
-      className="visual-stage min-h-[470px]"
+      className="visual-stage min-h-[590px]"
       aria-label="Animated full-stack architecture"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -292,9 +383,9 @@ export function ExpertiseVisual() {
           Layer {activeLayer + 1} / {layers.length}
         </span>
       </div>
-      <div className="relative z-10 mt-7 grid grid-cols-[8.6rem_1.5rem_minmax(0,1fr)] items-center sm:grid-cols-[11rem_2.5rem_minmax(0,1fr)]">
+      <div className="relative z-10 mt-7 grid gap-3 sm:grid-cols-[11rem_2.5rem_minmax(0,1fr)] sm:items-center sm:gap-0">
         <div
-          className="space-y-2"
+          className="grid grid-cols-2 gap-2 sm:block sm:space-y-2"
           role="tablist"
           aria-label="Full-stack layers"
         >
@@ -306,7 +397,7 @@ export function ExpertiseVisual() {
               aria-selected={index === activeLayer}
               aria-controls="expertise-layer-panel"
               onClick={() => setActiveLayer(index)}
-              className={`relative flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-all sm:px-4 sm:py-3.5 ${
+              className={`relative flex w-full items-center gap-2.5 rounded-lg border p-2.5 text-left transition-all sm:px-3 sm:py-2.5 ${
                 index === activeLayer
                   ? "border-accent/55 bg-accent/[.09]"
                   : "border-border bg-background/80 hover:border-secondary"
@@ -333,7 +424,7 @@ export function ExpertiseVisual() {
           ))}
         </div>
 
-        <div className="relative h-full" aria-hidden="true">
+        <div className="relative hidden h-full sm:block" aria-hidden="true">
           <span className="bg-border absolute top-1/2 right-0 left-0 h-px" />
           <motion.span
             key={`connector-${activeLayer}`}
@@ -344,7 +435,7 @@ export function ExpertiseVisual() {
           />
         </div>
 
-        <div className="min-w-0 pl-1">
+        <div className="min-w-0 sm:pl-1">
           <AnimatePresence mode="wait">
             <motion.article
               key={active.label}
@@ -354,7 +445,7 @@ export function ExpertiseVisual() {
               animate={{ opacity: 1, x: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, x: -8 }}
               transition={{ duration: reduceMotion ? 0 : 0.28 }}
-              className="border-accent/25 bg-background/90 relative min-h-[330px] overflow-hidden rounded-xl border p-4 sm:p-5"
+              className="border-accent/25 bg-background/90 relative min-h-[385px] overflow-hidden rounded-xl border p-4 sm:p-5"
             >
               <div className="flex items-center gap-3">
                 <div

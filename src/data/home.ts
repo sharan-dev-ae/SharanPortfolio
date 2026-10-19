@@ -36,7 +36,7 @@ export const engineeringApproach = [
   {
     title: "Build It End-to-End",
     description:
-      "Once the experience is clear, I take it through the stack: Angular and TypeScript, .NET APIs and business logic, SQL Server, integrations, and deployment.",
+      "Once the experience is clear, I take it through the stack: Angular and TypeScript, .NET APIs and business logic, SQL Server, integrations, and deployment. I keep every layer aligned around the same workflow so the product stays reliable, maintainable, and ready to evolve.",
   },
 ] as const;
 

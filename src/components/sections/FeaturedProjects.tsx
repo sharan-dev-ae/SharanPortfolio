@@ -18,23 +18,23 @@ export function FeaturedProjects() {
       className="border-border border-b py-24 sm:py-32"
     >
       <Container>
-        <FadeIn>
+        <FadeIn className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             id="work-title"
             eyebrow="Selected work"
-            title="Enterprise products, thoughtfully engineered."
-            description="A selection of enterprise systems where complex workflows, thoughtful interfaces, and full-stack engineering come together."
+            title="Systems built around real operational complexity."
+            description="Explore the workflows, architecture, and product thinking behind enterprise platforms I have taken from business problem to production."
           />
+          <Link
+            href="/projects"
+            className="text-secondary hover:text-accent inline-flex items-center gap-2 self-start text-sm font-semibold transition-colors lg:self-auto"
+          >
+            View all projects <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
         </FadeIn>
-        <FadeIn className="mt-12">
+        <FadeIn className="mt-14">
           <FeaturedProjectCarousel projects={featuredProjects} />
         </FadeIn>
-        <Link
-          href="/projects"
-          className="text-foreground hover:text-accent mt-10 inline-flex items-center gap-2 text-sm font-semibold"
-        >
-          View all projects <ArrowUpRight size={17} aria-hidden="true" />
-        </Link>
       </Container>
     </section>
   );
