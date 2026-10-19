@@ -19,4 +19,5 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/sharan-k-shaji-dev/",
   instagram: "https://www.instagram.com/sharan.k.shaji/",
   resumePath: "/resume",
+  resumeFilePath: "/Sharan-resume.pdf",
 } as const;

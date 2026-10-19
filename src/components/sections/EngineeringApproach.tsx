@@ -1,5 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { ApproachFlow } from "@/components/sections/ApproachFlow";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { ApproachVisual } from "@/components/sections/SectionVisuals";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function EngineeringApproach() {
@@ -10,12 +12,19 @@ export function EngineeringApproach() {
       className="border-border bg-surface/40 border-y py-24 sm:py-32"
     >
       <Container>
-        <SectionHeading
-          id="approach-title"
-          eyebrow="How I work"
-          title="From understanding the problem to shipping the solution."
-          description="I like to understand how a business actually works before deciding how the software should work. From shaping the experience to building APIs, data flows, and database logic, I enjoy owning the path from an idea to a system people can use."
-        />
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,.88fr)_minmax(0,1.12fr)] lg:gap-16">
+          <FadeIn from="left">
+            <SectionHeading
+              id="approach-title"
+              eyebrow="How I work"
+              title="From understanding the problem to shipping the solution."
+              description="I start with the people and process, shape a clear experience, then carry the solution through APIs, data, integrations, and delivery."
+            />
+          </FadeIn>
+          <FadeIn from="right">
+            <ApproachVisual />
+          </FadeIn>
+        </div>
         <ApproachFlow />
       </Container>
     </section>

@@ -116,6 +116,38 @@ section[id] {
     transparent 100%
   );
 }
+.visual-stage {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(
+      circle at 78% 18%,
+      rgba(165, 180, 252, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(145deg, rgba(23, 23, 23, 0.96), rgba(10, 10, 10, 0.98));
+  padding: 1.25rem;
+}
+.visual-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(161, 161, 170, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(161, 161, 170, 0.16) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+.visual-kicker {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 @keyframes assistant-border-breathe {
   0%,
   85%,

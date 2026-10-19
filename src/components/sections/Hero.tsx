@@ -149,7 +149,7 @@ export function Hero() {
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Button>
-            <Button href={siteConfig.resumePath} variant="secondary">
+            <Button href={siteConfig.resumeFilePath} variant="secondary">
               Download resume <Download aria-hidden="true" size={16} />
             </Button>
           </motion.div>
