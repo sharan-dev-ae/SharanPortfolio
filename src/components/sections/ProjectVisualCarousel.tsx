@@ -96,7 +96,7 @@ export function ProjectVisualCarousel({
           >
             {visual.src ? (
               <div
-                className={`relative mx-auto aspect-video w-full overflow-hidden ${compact ? "max-w-[311px] sm:max-w-[427px] lg:max-w-[498px]" : ""}`}
+                className={`relative mx-auto aspect-video w-full overflow-hidden ${compact ? "lg:max-w-[760px]" : ""}`}
               >
                 <Image
                   src={visual.src}
@@ -137,37 +137,41 @@ export function ProjectVisualCarousel({
           / {String(visuals.length).padStart(2, "0")}{" "}
           <span className="ml-3 hidden sm:inline">{visual.label}</span>
         </p>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => go(-1)}
-            aria-label="Previous visual"
-            className="border-border hover:border-accent flex size-11 items-center justify-center rounded-full border"
-          >
-            <ArrowLeft size={18} />
-          </button>
-          <button
-            type="button"
-            onClick={() => go(1)}
-            aria-label="Next visual"
-            className="border-border hover:border-accent flex size-11 items-center justify-center rounded-full border"
-          >
-            <ArrowRight size={18} />
-          </button>
+        {visuals.length > 1 && (
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous visual"
+              className="border-border hover:border-accent flex size-11 items-center justify-center rounded-full border"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next visual"
+              className="border-border hover:border-accent flex size-11 items-center justify-center rounded-full border"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        )}
+      </div>
+      {visuals.length > 1 && (
+        <div className="mt-3 flex gap-2">
+          {visuals.map((item, index) => (
+            <button
+              type="button"
+              key={item.type}
+              onClick={() => setActive(index)}
+              aria-label={`Show visual ${index + 1}: ${item.label}`}
+              aria-current={index === active ? "true" : undefined}
+              className={`h-1 flex-1 rounded-full ${index === active ? "bg-accent" : "bg-border hover:bg-secondary"}`}
+            />
+          ))}
         </div>
-      </div>
-      <div className="mt-3 flex gap-2">
-        {visuals.map((item, index) => (
-          <button
-            type="button"
-            key={item.type}
-            onClick={() => setActive(index)}
-            aria-label={`Show visual ${index + 1}: ${item.label}`}
-            aria-current={index === active ? "true" : undefined}
-            className={`h-1 flex-1 rounded-full ${index === active ? "bg-accent" : "bg-border hover:bg-secondary"}`}
-          />
-        ))}
-      </div>
+      )}
       <p className="sr-only" aria-live="polite">
         Visual {active + 1} of {visuals.length}: {visual.label}
       </p>

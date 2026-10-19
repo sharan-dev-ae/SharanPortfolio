@@ -122,7 +122,7 @@ export function FeaturedProjectCarousel({ projects }: { projects: Project[] }) {
             animate={{ opacity: 1, x: 0 }}
             exit={reducedMotion ? undefined : { opacity: 0, x: -20 }}
             transition={{ duration: reducedMotion ? 0 : 0.35, ease: "easeOut" }}
-            className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,.34fr)_minmax(0,.66fr)] lg:items-center"
+            className="grid min-w-0 gap-8 lg:grid-cols-[minmax(250px,.3fr)_minmax(0,.7fr)] lg:items-center"
           >
             <div className="flex flex-col items-start">
               <p className="text-secondary max-w-xl text-sm leading-6 sm:text-base">

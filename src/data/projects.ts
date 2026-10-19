@@ -138,6 +138,45 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "CI/CD Monitoring & Deployment Management Platform",
+    slug: "cicd-monitoring-deployment-platform",
+    shortDescription:
+      "An enterprise deployment platform that orchestrates Angular builds and controlled IIS releases through GitHub Actions, secure approvals, real-time monitoring, and recoverable production workflows.",
+    homepageSummary:
+      "From build request to approved production deployment—with secure release gates, live monitoring, verification, and rollback.",
+    businessProblem:
+      "Enterprise releases need a controlled path from source changes to production, with clear approval, traceability, monitoring, and recovery when deployments fail.",
+    solution:
+      "A centralized platform separating build and deployment workflows, enforcing OTP and role-based approval, and tracking every release through validation, monitoring, and rollback.",
+    role: "Architecture / Full-Stack Development / DevOps Automation",
+    technicalFocus:
+      "Secure release orchestration, real-time monitoring, and deployment recovery",
+    category: "Enterprise DevOps & Release Platform",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "ASP.NET Core",
+      "C#",
+      "SQL Server",
+      "GitHub Actions",
+      "SignalR",
+      "IIS",
+    ],
+    featured: true,
+    homepagePriority: 3,
+    highlight:
+      "Two-stage release orchestration with self-hosted runners, secure approval, live execution logs, automated backups, verification, and rollback.",
+    image: "/images/projects/cicd/deployment-workflow.png",
+    visuals: [
+      {
+        type: "deployment-workflow",
+        label: "Controlled Deployment Lifecycle",
+        src: "/images/projects/cicd/deployment-workflow.png",
+        alt: "CI/CD monitoring and deployment workflow from source update and build through approval, OTP verification, controlled deployment, monitoring, and recovery",
+      },
+    ],
+  },
+  {
     title: "Alnouras App",
     slug: "alnouras-app",
     shortDescription:
@@ -154,7 +193,7 @@ export const projects: Project[] = [
     category: "Enterprise Operations Platform",
     technologies: [],
     featured: true,
-    homepagePriority: 3,
+    homepagePriority: 4,
     highlight:
       "Dedicated routes, map-based vehicle visibility, trip execution, and operational dashboards.",
     image: "/images/projects/alnouras/route-tracking.png",

@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { ProjectManagementCaseStudy } from "@/components/sections/ProjectManagementCaseStudy";
 import { EmsCaseStudy } from "@/components/sections/EmsCaseStudy";
 import { AlnourasCaseStudy } from "@/components/sections/AlnourasCaseStudy";
+import { CicdCaseStudy } from "@/components/sections/CicdCaseStudy";
 import { projects, getProjectBySlug } from "@/data/projects";
 
 export const dynamicParams = false;
@@ -44,6 +45,10 @@ export default async function ProjectPage({
 
   if (slug === "alnouras-app") {
     return <AlnourasCaseStudy />;
+  }
+
+  if (slug === "cicd-monitoring-deployment-platform") {
+    return <CicdCaseStudy />;
   }
 
   return (

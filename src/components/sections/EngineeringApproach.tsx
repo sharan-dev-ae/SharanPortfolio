@@ -1,5 +1,4 @@
 import { Container } from "@/components/layout/Container";
-import { ApproachFlow } from "@/components/sections/ApproachFlow";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ApproachVisual } from "@/components/sections/SectionVisuals";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -25,7 +24,6 @@ export function EngineeringApproach() {
             <ApproachVisual />
           </FadeIn>
         </div>
-        <ApproachFlow />
       </Container>
     </section>
   );
