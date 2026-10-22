@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { BeyondCodeCarousel } from "@/components/sections/BeyondCodeCarousel";
@@ -37,14 +37,8 @@ export default function AboutPage() {
           />
         </FadeIn>
         <div className="order-1 lg:order-2">
-          <Link
-            href="/"
-            className="text-secondary hover:text-foreground inline-flex items-center gap-2 text-sm"
-          >
-            <ArrowLeft aria-hidden="true" size={16} /> Back to homepage
-          </Link>
           <FadeIn>
-            <p className="text-accent mt-14 text-xs font-semibold tracking-[.2em] uppercase">
+            <p className="text-accent text-xs font-semibold tracking-[.2em] uppercase">
               The person behind the work
             </p>
           </FadeIn>

@@ -182,6 +182,9 @@ body:has(.prototype-fullscreen) > header,
 body:has(.prototype-fullscreen) > footer {
   display: none;
 }
+body:has(.home-page) .global-back-button {
+  display: none !important;
+}
 .prototype-fullscreen {
   background:
     radial-gradient(circle at 88% 4%, rgba(183, 0, 0, 0.055), transparent 26%),
@@ -189,9 +192,91 @@ body:has(.prototype-fullscreen) > footer {
     #f6f7f9 !important;
   color: #111318 !important;
 }
+@keyframes routewise-intro-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes routewise-phone-float {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+.routewise-intro {
+  animation: routewise-intro-in 0.5s ease-out both;
+}
+.prototype-fullscreen.routewise-theme {
+  background: #080b12 !important;
+  color: #eef3fb !important;
+}
+.prototype-fullscreen.orchestra-theme {
+  background: #09090b !important;
+  color: #f4f4f5 !important;
+}
+.routewise-phone {
+  animation: routewise-phone-float 5s ease-in-out infinite;
+}
+.routewise-map .leaflet-tile-pane {
+  filter: brightness(0.48) saturate(0.55) hue-rotate(178deg) contrast(1.15);
+}
+.routewise-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+.routewise-map .leaflet-control-attribution {
+  background: rgba(8, 11, 18, 0.78) !important;
+  color: #748198;
+  font-size: 8px;
+}
+.routewise-map .leaflet-control-attribution a {
+  color: #70a1ff;
+}
+.routewise-map .leaflet-tooltip {
+  border: 1px solid #2a3446;
+  background: #0d1119;
+  color: #eef3fb;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.input {
+  width: 100%;
+  border: 1px solid #27272a;
+  border-radius: .5rem;
+  background: #18181b;
+  padding: .625rem .75rem;
+  color: #f4f4f5;
+  font-size: .7rem;
+  outline: none;
+}
+.input:focus {
+  border-color: rgba(129, 140, 248, .72);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, .09);
+}
+.input::placeholder { color: #52525b; }
+.routewise-theme .text-\[\#536078\] {
+  color: #9aa9bf !important;
+}
+.routewise-theme .text-\[\#94a3b8\] {
+  color: #d3dbe8 !important;
+}
+.routewise-theme .text-\[\#aeb9ca\] {
+  color: #e1e7f0 !important;
+}
+.routewise-theme input::placeholder {
+  color: #8291a8;
+}
+.routewise-theme select option {
+  background: #0d1119;
+  color: #eef3fb;
+}
+.routewise-map .leaflet-control-attribution {
+  color: #b7c2d3;
+}
 @media (prefers-reduced-motion: reduce) {
   .ask-sharan-launcher,
   .hero-status-dot {
+    animation: none;
+  }
+  .routewise-intro,
+  .routewise-phone {
     animation: none;
   }
 }

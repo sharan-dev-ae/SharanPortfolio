@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ProjectVisualLibrary } from "@/components/sections/ProjectVisualLibrary";
@@ -50,14 +50,8 @@ export function ProjectManagementCaseStudy() {
   return (
     <main id="main-content">
       <Container className="pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <Link
-          href="/#work"
-          className="text-secondary hover:text-foreground inline-flex items-center gap-2 text-sm"
-        >
-          <ArrowLeft size={16} aria-hidden="true" /> Back to selected work
-        </Link>
         <FadeIn>
-          <p className="text-accent mt-14 text-xs font-semibold tracking-[.2em] uppercase">
+          <p className="text-accent text-xs font-semibold tracking-[.2em] uppercase">
             {project.category}
           </p>
           <h1 className="mt-5 max-w-5xl text-5xl leading-[1.02] font-semibold tracking-[-.065em] sm:text-7xl">

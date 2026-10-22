@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 export function Navbar() {
   return (
     <header className="border-border/80 bg-background/90 sticky top-0 z-50 border-b backdrop-blur-md">
-      <Container className="flex h-18 items-center justify-between gap-6">
+      <Container className="flex h-18 items-center justify-between gap-6 pr-28 sm:pr-36">
         <Link
           href="/"
           className="text-foreground shrink-0 text-base font-semibold tracking-[-0.04em]"

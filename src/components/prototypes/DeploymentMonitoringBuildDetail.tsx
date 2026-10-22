@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
-  AlertTriangle, ArrowLeft, Bot, Check, Copy,
+  AlertTriangle, Bot, Check, Copy,
   GitBranch, KeyRound, RefreshCw, RotateCcw,
   ShieldCheck, TerminalSquare,
 } from "lucide-react";
@@ -59,7 +58,7 @@ export function DeploymentMonitoringBuildDetail({ buildId }: { buildId: string }
   };
 
   return <main id="main-content" className="prototype-fullscreen fixed inset-0 z-[60] min-h-screen w-screen overflow-y-auto text-[#111318]">
-    <div className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl"><div className="flex w-full items-center justify-between gap-4 px-5 py-4 sm:px-8"><Link href="/prototypes/automated-deployment-monitoring" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-[#b70000]"><ArrowLeft size={16}/>Deployment dashboard</Link><span className="shrink-0 rounded-full bg-blue-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.12em] text-blue-700">Prototype simulation</span></div></div>
+    <div className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-xl"><div className="flex w-full items-center justify-between gap-4 px-5 py-4 pr-28 sm:px-8 sm:pr-44"><span className="text-sm font-semibold text-slate-700">Deployment build detail</span><span className="hidden shrink-0 rounded-full bg-blue-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.12em] text-blue-700 sm:inline-flex">Prototype simulation</span></div></div>
     <div className="w-full px-5 py-10 sm:px-8 lg:px-12">
       <header className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><div><div className="flex flex-wrap items-center gap-3"><h1 className="text-4xl font-bold tracking-[-.05em] sm:text-5xl">{source.id}</h1><span className="rounded-full bg-amber-50 px-3 py-1 text-[10px] font-bold tracking-[.08em] text-amber-800 ring-1 ring-amber-200">{label(status)}</span></div><p className="mt-4 text-lg text-slate-600">{source.name} · {source.message}</p><div className="mt-4 flex flex-wrap gap-4 text-xs text-slate-500"><span className="inline-flex items-center gap-1.5"><GitBranch size={13}/>{source.branch}</span><code>{source.sha}</code><span>by {source.author}</span></div></div><div className="rounded-2xl border border-slate-200 bg-white p-4 lg:min-w-72"><p className="text-xs text-slate-500">Estimated completion</p><p className="mt-1 text-2xl font-bold">10:01 GST</p><p className="mt-1 text-[11px] text-slate-400">Estimate · ± 2 min, based on 20 successful runs</p></div></header>
 

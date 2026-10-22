@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { AssistantLauncher } from "@/components/assistant/AssistantLauncher";
+import { GlobalBackButton } from "@/components/layout/GlobalBackButton";
 import { siteMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <GlobalBackButton />
         <AssistantLauncher />
       </body>
     </html>
