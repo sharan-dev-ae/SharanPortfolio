@@ -183,45 +183,11 @@ body:has(.prototype-fullscreen) > footer {
   display: none;
 }
 .prototype-fullscreen {
-  background: #0a0a0a !important;
-  color: #f5f5f5 !important;
-}
-.prototype-fullscreen .bg-white {
-  background-color: #111111 !important;
-}
-.prototype-fullscreen .bg-slate-50,
-.prototype-fullscreen .bg-\[\#faf9f7\],
-.prototype-fullscreen .bg-\[\#f0ede8\],
-.prototype-fullscreen .bg-\[\#eeeae4\] {
-  background-color: #171717 !important;
-}
-.prototype-fullscreen .text-slate-950,
-.prototype-fullscreen .text-slate-900,
-.prototype-fullscreen .text-\[\#19191c\],
-.prototype-fullscreen .text-\[\#252326\],
-.prototype-fullscreen .text-\[\#412a12\] {
-  color: #f5f5f5 !important;
-}
-.prototype-fullscreen .text-slate-700,
-.prototype-fullscreen .text-slate-600,
-.prototype-fullscreen .text-\[\#625d58\] {
-  color: #d4d4d8 !important;
-}
-.prototype-fullscreen .text-slate-500,
-.prototype-fullscreen .text-slate-400,
-.prototype-fullscreen .text-\[\#77716b\],
-.prototype-fullscreen .text-\[\#aaa39c\] {
-  color: #a1a1aa !important;
-}
-.prototype-fullscreen .border-slate-200,
-.prototype-fullscreen .border-slate-100,
-.prototype-fullscreen .border-\[\#ded9d2\],
-.prototype-fullscreen .border-\[\#e8e3dc\] {
-  border-color: #27272a !important;
-}
-.prototype-fullscreen input {
-  background: #0a0a0a !important;
-  color: #f5f5f5 !important;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(183, 0, 0, 0.055), transparent 26%),
+    radial-gradient(circle at 10% 30%, rgba(37, 99, 235, 0.045), transparent 23%),
+    #f6f7f9 !important;
+  color: #111318 !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .ask-sharan-launcher,
