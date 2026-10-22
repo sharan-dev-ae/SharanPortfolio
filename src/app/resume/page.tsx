@@ -7,47 +7,44 @@ export const metadata: Metadata = { title: "Resume" };
 
 export default function ResumePage() {
   return (
-    <main id="main-content">
-      <Container className="py-24">
-        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-          <div>
-            <p className="text-accent text-xs font-medium tracking-[0.2em] uppercase">
+    <main id="main-content" className="min-h-[calc(100svh-4.5rem)]">
+      <Container className="flex min-h-[calc(100svh-4.5rem)] flex-col py-4 sm:py-6">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-accent text-[10px] font-medium tracking-[0.18em] uppercase">
               Resume
             </p>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h1 className="mt-1 truncate text-lg font-semibold tracking-tight sm:text-xl">
               {siteConfig.developerName}
             </h1>
-            <p className="text-secondary mt-3">{siteConfig.role}</p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex shrink-0 gap-2">
             <a
               href={siteConfig.resumeFilePath}
               download="Sharan-K-Shaji-Resume.pdf"
-              className="bg-foreground text-background inline-flex min-h-10 items-center gap-2 rounded-md px-4 py-2 text-sm font-medium"
+              aria-label="Download resume PDF"
+              className="bg-foreground text-background inline-flex h-9 items-center gap-2 rounded-md px-3 text-sm font-medium"
             >
-              <Download size={16} aria-hidden="true" /> Download PDF
+              <Download size={16} aria-hidden="true" /> <span className="hidden sm:inline">Download PDF</span>
             </a>
             <a
               href={siteConfig.resumeFilePath}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-border hover:bg-surface inline-flex min-h-10 items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition-colors"
+              aria-label="Open resume in a new tab"
+              className="border-border hover:bg-surface inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors"
             >
-              Open in new tab <ExternalLink size={15} aria-hidden="true" />
+              <span className="hidden sm:inline">Open in new tab</span> <ExternalLink size={15} aria-hidden="true" />
             </a>
           </div>
         </div>
-        <div className="border-border bg-surface mt-10 overflow-hidden rounded-2xl border p-2 sm:p-3">
+        <div className="border-border bg-surface mt-4 flex flex-1 overflow-hidden rounded-xl border p-1.5 sm:p-2">
           <iframe
-            src={`${siteConfig.resumeFilePath}#view=FitH`}
+            src={`${siteConfig.resumeFilePath}#page=1&zoom=100`}
             title={`${siteConfig.developerName} resume`}
-            className="h-[72vh] min-h-[620px] w-full rounded-xl bg-white"
+            className="h-full min-h-[calc(100svh-9rem)] w-full rounded-lg bg-white"
           />
         </div>
-        <p className="text-secondary mt-4 text-xs">
-          If the preview does not load in your browser, use the download or open
-          button above.
-        </p>
       </Container>
     </main>
   );
