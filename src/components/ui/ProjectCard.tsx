@@ -3,82 +3,40 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types/project";
 import { PROJECTS_BASE_PATH } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 import { Badge } from "./Badge";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
-  prominent?: boolean;
 }
 
 export function ProjectCard({
   project,
   index,
-  prominent = false,
 }: ProjectCardProps) {
   const href = `${PROJECTS_BASE_PATH}/${project.slug}`;
+  const visuals = (project.visuals?.length
+    ? project.visuals
+    : [{ type: "cover", label: project.title, src: project.image }]
+  ).slice(0, 3);
   return (
-    <article
-      className={cn(
-        "group border-border bg-surface hover:border-secondary/60 overflow-hidden rounded-xl border transition-colors",
-        prominent && "lg:grid lg:grid-cols-[1.1fr_1fr]",
-        index === 0 && "border-accent/40",
-      )}
-    >
-      <Link
-        href={href}
-        tabIndex={-1}
-        aria-hidden="true"
-        className={cn(
-          "border-border bg-surface-secondary relative block overflow-hidden border-b",
-          prominent && "lg:border-r lg:border-b-0",
-        )}
-      >
-        <Image
-          src={project.image}
-          alt=""
-          width={1200}
-          height={675}
-          className={cn(
-            "aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]",
-            prominent && "lg:aspect-auto lg:h-full",
-          )}
-        />
-        <span className="bg-background/70 text-foreground absolute top-5 left-5 rounded border border-white/10 px-2.5 py-1 text-[10px] font-medium tracking-[0.18em] uppercase backdrop-blur-sm">
-          Concept preview / 0{index + 1}
-        </span>
-      </Link>
-      <div
-        className={cn(
-          "flex flex-col p-6 sm:p-8",
-          prominent && "lg:justify-center lg:p-10",
-        )}
-      >
+    <article className={`group border-border bg-surface flex h-full flex-col rounded-xl border p-5 transition-colors hover:border-secondary/60 sm:p-6 ${index === 0 ? "border-accent/40" : ""}`}>
+      <div className="flex flex-1 flex-col">
         <div className="flex flex-wrap items-center gap-3">
           <Badge>{project.category}</Badge>
           {project.year && (
             <span className="text-secondary text-xs">{project.year}</span>
           )}
         </div>
-        <h3
-          className={cn(
-            "mt-6 font-semibold tracking-tight",
-            prominent
-              ? index === 0
-                ? "text-3xl sm:text-4xl"
-                : "text-2xl sm:text-3xl"
-              : "text-xl",
-          )}
-        >
+        <h3 className="mt-5 text-xl font-semibold tracking-tight sm:text-2xl">
           <Link href={href} className="hover:text-accent">
             {project.title}
           </Link>
         </h3>
-        <p className="text-secondary mt-3 max-w-2xl leading-7">
-          {project.shortDescription}
+        <p className="text-secondary mt-3 text-sm leading-6">
+          {project.homepageSummary ?? project.shortDescription}
         </p>
-        <dl className="border-border mt-6 space-y-3 border-t pt-5 text-sm">
+        <dl className="border-border mt-5 grid gap-4 border-t pt-5 text-sm sm:grid-cols-2">
           <div>
             <dt className="text-secondary text-xs tracking-[0.12em] uppercase">
               Business problem
@@ -93,38 +51,11 @@ export function ProjectCard({
             </dt>
             <dd className="text-foreground/85 mt-1">{project.solution}</dd>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div>
-              <dt className="text-secondary text-xs tracking-[0.12em] uppercase">
-                My role
-              </dt>
-              <dd className="text-foreground/85 mt-1">{project.role}</dd>
-            </div>
-            <div>
-              <dt className="text-secondary text-xs tracking-[0.12em] uppercase">
-                Technical focus
-              </dt>
-              <dd className="text-foreground/85 mt-1">
-                {project.technicalFocus}
-              </dd>
-            </div>
-          </div>
         </dl>
-        {project.technologies.length > 0 && (
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
-            {project.technologies.map((technology) => (
-              <li
-                key={technology}
-                className="border-border text-secondary rounded border px-2.5 py-1 text-xs"
-              >
-                {technology}
-              </li>
-            ))}
-          </ul>
-        )}
+        <div className="mt-5"><p className="text-accent text-[.65rem] font-semibold tracking-[.16em] uppercase">Workflow library</p><div className="mt-3 grid grid-cols-3 gap-2">{visuals.map((visual) => <div key={visual.type} className="border-border bg-surface-secondary relative aspect-[4/3] overflow-hidden rounded-md border">{visual.src && <Image src={visual.src} alt={visual.alt ?? visual.label} fill sizes="(max-width: 767px) 29vw, 14vw" className="object-contain p-1"/>}</div>)}</div></div>
         <Link
           href={href}
-          className="text-foreground hover:text-accent mt-8 inline-flex w-fit items-center gap-2 text-sm font-medium transition-colors"
+          className="text-foreground hover:text-accent mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium transition-colors"
         >
           View case study <ArrowUpRight aria-hidden="true" size={16} />
         </Link>

@@ -15,7 +15,7 @@ export function FeaturedProjects() {
     <section
       id="work"
       aria-labelledby="work-title"
-      className="border-border border-b py-20 sm:py-24"
+      className="border-border border-b py-14 sm:py-20"
     >
       <Container>
         <FadeIn className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -33,7 +33,7 @@ export function FeaturedProjects() {
             View all projects <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </FadeIn>
-        <FadeIn className="mt-10">
+        <FadeIn className="mt-8">
           <FeaturedProjectShowcase projects={featuredProjects} />
         </FadeIn>
       </Container>

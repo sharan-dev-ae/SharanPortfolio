@@ -34,17 +34,10 @@ export default function ProjectsPage() {
           Enterprise applications, workflows, and product experiences. Explore
           the selected case studies below.
         </p>
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {ordered.map((project, index) => (
-            <div
-              key={project.slug}
-              className={index < 2 ? "lg:col-span-2" : ""}
-            >
-              <ProjectCard
-                project={project}
-                index={index}
-                prominent={index < 2}
-              />
+            <div key={project.slug}>
+              <ProjectCard project={project} index={index} />
             </div>
           ))}
         </div>

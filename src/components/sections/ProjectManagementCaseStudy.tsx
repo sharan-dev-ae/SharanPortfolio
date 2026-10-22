@@ -2,8 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ProjectConceptVisual } from "@/components/ui/ProjectConceptVisual";
-import { ProjectVisualCarousel } from "@/components/sections/ProjectVisualCarousel";
+import { ProjectVisualLibrary } from "@/components/sections/ProjectVisualLibrary";
 import { projectManagement as copy } from "@/data/projectManagement";
 import { projects } from "@/data/projects";
 
@@ -21,7 +20,7 @@ function StorySection({
   return (
     <section
       aria-labelledby={`section-${number}`}
-      className={`border-border border-t py-20 sm:py-28 ${shaded ? "bg-surface/40" : ""}`}
+      className={`border-border border-t py-12 sm:py-16 ${shaded ? "bg-surface/40" : ""}`}
     >
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,.37fr)_minmax(0,.63fr)] lg:gap-20">
         <FadeIn>
@@ -81,12 +80,7 @@ export function ProjectManagementCaseStudy() {
             <p className="mt-2 font-medium">{project.technicalFocus}</p>
           </div>
         </FadeIn>
-        <FadeIn className="mt-14">
-          <ProjectVisualCarousel
-            visuals={project.visuals ?? []}
-            label="Project Management System conceptual visuals"
-          />
-        </FadeIn>
+        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="Project Management System workflow library" /></FadeIn>
       </Container>
       <StorySection number="01" title="Overview">
         <p>{copy.summary}</p>
@@ -99,14 +93,12 @@ export function ProjectManagementCaseStudy() {
       </StorySection>
       <StorySection number="04" title="Project Structure & Planning" shaded>
         <p>{copy.structure}</p>
-        <ProjectConceptVisual kind="structure" className="mt-9" />
       </StorySection>
       <StorySection number="05" title="Percentage-Based Progress Tracking">
         <p>{copy.progress}</p>
       </StorySection>
       <StorySection number="06" title="Site Progress Updates" shaded>
         <p>{copy.site}</p>
-        <ProjectConceptVisual kind="workflow" className="mt-9" />
       </StorySection>
       <StorySection number="07" title="Forecasting">
         <p>
@@ -126,11 +118,9 @@ export function ProjectManagementCaseStudy() {
             </div>
           ))}
         </div>
-        <ProjectConceptVisual kind="forecast" className="mt-9" />
       </StorySection>
       <StorySection number="08" title="Project Health & Risk Monitoring" shaded>
         <p>{copy.health}</p>
-        <ProjectConceptVisual kind="health" className="mt-9" />
       </StorySection>
       <StorySection
         number="09"

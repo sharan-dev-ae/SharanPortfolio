@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ProjectVisualCarousel } from "@/components/sections/ProjectVisualCarousel";
+import { ProjectVisualLibrary } from "@/components/sections/ProjectVisualLibrary";
 import { getProjectBySlug } from "@/data/projects";
 
 const modules = [
@@ -58,7 +57,7 @@ function Section({
   return (
     <section
       aria-labelledby={`alnouras-${number}`}
-      className={`border-border border-t py-16 sm:py-24 ${shaded ? "bg-surface/40" : ""}`}
+      className={`border-border border-t py-12 sm:py-16 ${shaded ? "bg-surface/40" : ""}`}
     >
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,.37fr)_minmax(0,.63fr)] lg:gap-20">
         <FadeIn>
@@ -78,20 +77,6 @@ function Section({
         </FadeIn>
       </Container>
     </section>
-  );
-}
-
-function Visual({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="mt-9 aspect-video w-full overflow-hidden bg-black">
-      <Image
-        src={src}
-        alt={alt}
-        width={1680}
-        height={945}
-        className="h-full w-full object-contain"
-      />
-    </div>
   );
 }
 
@@ -131,12 +116,7 @@ export function AlnourasCaseStudy() {
             <p className="mt-2 font-medium">{project.technicalFocus}</p>
           </div>
         </FadeIn>
-        <FadeIn className="mt-14">
-          <ProjectVisualCarousel
-            visuals={project.visuals ?? []}
-            label="Alnouras App conceptual visuals"
-          />
-        </FadeIn>
+        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="Alnouras workflow library" /></FadeIn>
       </Container>
 
       <Section number="01" title="Overview">
@@ -171,10 +151,6 @@ export function AlnourasCaseStudy() {
             </div>
           ))}
         </div>
-        <Visual
-          src="/images/projects/alnouras/platform-overview.png"
-          alt="Concept diagram of Alnouras operational modules"
-        />
       </Section>
       <Section number="05" title="Dedicated Route Management">
         <p>
@@ -182,10 +158,6 @@ export function AlnourasCaseStudy() {
           to field teams. The platform connects route preparation with trip
           sheets, vehicles, and the activity recorded during execution.
         </p>
-        <Visual
-          src="/images/projects/alnouras/operations-workflow.png"
-          alt="Concept diagram of route assignment within the operational workflow"
-        />
       </Section>
       <Section number="06" title="Map-Based Route Visibility" shaded>
         <p>
@@ -193,10 +165,6 @@ export function AlnourasCaseStudy() {
           and vehicles. It helps them understand where work is taking place and
           review progress across service areas.
         </p>
-        <Visual
-          src="/images/projects/alnouras/route-tracking.png"
-          alt="Conceptual map view of waste collection routes across the UAE"
-        />
       </Section>
       <Section number="07" title="Progress & Efficiency Monitoring">
         <p>
@@ -204,10 +172,6 @@ export function AlnourasCaseStudy() {
           completed service stops, and areas that may need attention. This
           supports review of execution and opportunities to improve operations.
         </p>
-        <Visual
-          src="/images/projects/alnouras/route-progress.png"
-          alt="Conceptual route progress and efficiency view"
-        />
       </Section>
       <Section number="08" title="Dashboards & Operational Insights" shaded>
         <p>

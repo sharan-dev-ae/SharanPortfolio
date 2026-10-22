@@ -2,8 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ProjectConceptVisual } from "@/components/ui/ProjectConceptVisual";
-import { ProjectVisualCarousel } from "@/components/sections/ProjectVisualCarousel";
+import { ProjectVisualLibrary } from "@/components/sections/ProjectVisualLibrary";
 import { emsCaseStudy as copy } from "@/data/ems";
 import { projects } from "@/data/projects";
 
@@ -21,7 +20,7 @@ function Chapter({
   return (
     <section
       aria-labelledby={`ems-${number}`}
-      className={`border-border border-t py-20 sm:py-28 ${shaded ? "bg-surface/40" : ""}`}
+      className={`border-border border-t py-12 sm:py-16 ${shaded ? "bg-surface/40" : ""}`}
     >
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,.37fr)_minmax(0,.63fr)] lg:gap-20">
         <FadeIn>
@@ -84,12 +83,7 @@ export function EmsCaseStudy() {
             <p className="mt-2 font-medium">{project.technicalFocus}</p>
           </div>
         </FadeIn>
-        <FadeIn className="mt-14">
-          <ProjectVisualCarousel
-            visuals={project.visuals ?? []}
-            label="EMS conceptual visuals"
-          />
-        </FadeIn>
+        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="EMS workflow library" /></FadeIn>
       </Container>
       <Chapter number="01" title="Overview">
         <p>{copy.overview}</p>
@@ -116,21 +110,18 @@ export function EmsCaseStudy() {
             </li>
           ))}
         </ol>
-        <ProjectConceptVisual kind="lifecycle" className="mt-9" />
       </Chapter>
       <Chapter number="04" title="Opportunity Intake" shaded>
         <p>{copy.intake}</p>
       </Chapter>
       <Chapter number="05" title="Multi-Stage Approval Workflow">
         <p>{copy.approvals}</p>
-        <ProjectConceptVisual kind="roles" className="mt-9" />
       </Chapter>
       <Chapter number="06" title="Estimation Management" shaded>
         <p>{copy.management}</p>
       </Chapter>
       <Chapter number="07" title="Estimator Workflow">
         <p>{copy.estimator}</p>
-        <ProjectConceptVisual kind="ems-dashboard" className="mt-9" />
       </Chapter>
       <Chapter number="08" title="Pricing & Commercial Adjustments" shaded>
         <p>{copy.pricing}</p>
@@ -153,7 +144,6 @@ export function EmsCaseStudy() {
       </Chapter>
       <Chapter number="11" title="Evolving Beyond Estimation">
         <p>{copy.evolving}</p>
-        <ProjectConceptVisual kind="modules" className="mt-9" />
       </Chapter>
       <Chapter number="12" title="My Contribution" shaded>
         <p>{copy.contribution}</p>
@@ -179,7 +169,6 @@ export function EmsCaseStudy() {
             </div>
           ))}
         </div>
-        <ProjectConceptVisual kind="architecture" className="mt-9" />
       </Chapter>
       <Chapter number="14" title="Outcome" shaded>
         <ul className="marker:text-accent list-disc space-y-3 pl-5">

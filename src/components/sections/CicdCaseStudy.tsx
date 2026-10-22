@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ProjectVisualCarousel } from "@/components/sections/ProjectVisualCarousel";
+import { ProjectVisualLibrary } from "@/components/sections/ProjectVisualLibrary";
 import { projects } from "@/data/projects";
 
 function Chapter({
@@ -28,7 +28,7 @@ function Chapter({
   return (
     <section
       aria-labelledby={`cicd-${number}`}
-      className={`border-border border-t py-20 sm:py-28 ${shaded ? "bg-surface/40" : ""}`}
+      className={`border-border border-t py-12 sm:py-16 ${shaded ? "bg-surface/40" : ""}`}
     >
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,.32fr)_minmax(0,.68fr)] lg:gap-20">
         <FadeIn>
@@ -112,12 +112,7 @@ export function CicdCaseStudy() {
             <p className="mt-2 font-medium">{project.technicalFocus}</p>
           </div>
         </FadeIn>
-        <FadeIn className="mt-14">
-          <ProjectVisualCarousel
-            visuals={project.visuals ?? []}
-            label="CI/CD deployment workflow"
-          />
-        </FadeIn>
+        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="CI/CD workflow library" /></FadeIn>
       </Container>
 
       <Chapter number="01" title="The release problem">
