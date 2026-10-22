@@ -21,6 +21,10 @@ export function AssistantLauncher() {
     window.setTimeout(() => launcher.current?.focus(), 0);
   }, []);
 
+  if (pathname.startsWith("/prototypes/automated-deployment-monitoring")) {
+    return null;
+  }
+
   return (
     <>
       <div className="fixed right-[max(16px,env(safe-area-inset-right))] bottom-[max(18px,env(safe-area-inset-bottom))] z-40 sm:right-7 sm:bottom-7">
