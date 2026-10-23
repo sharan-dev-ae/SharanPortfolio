@@ -30,6 +30,18 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
 }
+a[href],
+button:not(:disabled),
+summary,
+select,
+[role="button"]:not([aria-disabled="true"]),
+[role="tab"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
 ::selection {
   background: var(--accent);
   color: var(--background);
