@@ -58,7 +58,7 @@ export function suggestionsForPath(pathname: string): string[] {
     ];
   if (pathname.includes("project-management-system"))
     return [
-      "Explain the Project Management System",
+      "Explain the Project Execution Platform",
       "What did Sharan contribute?",
       "How is project progress tracked?",
       "What technologies were used?",
@@ -88,7 +88,7 @@ export function suggestionsForPath(pathname: string): string[] {
     return [
       "What projects has he worked on?",
       "Tell me about EMS",
-      "Explain the Project Management System",
+      "Explain the Project Execution Platform",
       "What is Alnouras App?",
     ];
   return defaultSuggestions;

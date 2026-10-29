@@ -74,7 +74,7 @@ export function ProjectManagementCaseStudy() {
             <p className="mt-2 font-medium">{project.technicalFocus}</p>
           </div>
         </FadeIn>
-        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="Project Management System workflow library" /></FadeIn>
+        <FadeIn><ProjectVisualLibrary visuals={project.visuals ?? []} label="Enterprise Project Execution and Controls Platform workflow library" /></FadeIn>
       </Container>
       <StorySection number="01" title="Overview">
         <p>{copy.summary}</p>
@@ -192,7 +192,7 @@ export function ProjectManagementCaseStudy() {
             href="/projects/ems-estimation-management-system"
             className="hover:text-accent mt-2 inline-flex items-center gap-2 text-xl font-semibold"
           >
-            EMS – Estimation Management System
+            Enterprise Estimation &amp; Quotation Platform
             <ArrowUpRight size={19} aria-hidden="true" />
           </Link>
         </div>

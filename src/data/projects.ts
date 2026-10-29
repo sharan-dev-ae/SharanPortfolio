@@ -2,7 +2,7 @@ import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
-    title: "EMS – Estimation Management System",
+    title: "Enterprise Estimation & Quotation Platform",
     slug: "ems-estimation-management-system",
     shortDescription:
       "A large-scale enterprise platform managing the estimation lifecycle—from CRM opportunity initiation and multi-stage approvals to technical evaluation, estimator processing, pricing adjustments, and quotation preparation.",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     image: "/images/projects/enterprise-forecasting-platform.svg",
   },
   {
-    title: "Project Management System",
+    title: "Enterprise Project Execution & Controls Platform",
     slug: "project-management-system",
     shortDescription:
       "A comprehensive enterprise platform for planning, tracking, and controlling project execution—combining progress monitoring, resource forecasts, financial forecasts, and site updates in one system.",

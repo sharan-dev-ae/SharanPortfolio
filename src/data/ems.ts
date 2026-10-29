@@ -1,5 +1,5 @@
 export const emsCaseStudy = {
-  subtitle: "Estimation Management System",
+  subtitle: "Enterprise Estimation & Quotation Platform",
   overview:
     "EMS is a large-scale enterprise application managing the estimation lifecycle from CRM opportunity initiation through multi-stage review, estimator processing, pricing, and quotation preparation. It connects several teams in one controlled, role-aware workflow.",
   problem:

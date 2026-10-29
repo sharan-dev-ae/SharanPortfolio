@@ -193,7 +193,7 @@ export function EmsCaseStudy() {
             href="/projects/project-management-system"
             className="hover:text-accent mt-2 inline-flex items-center gap-2 text-xl font-semibold"
           >
-            Project Management System{" "}
+            Enterprise Project Execution &amp; Controls Platform{" "}
             <ArrowUpRight size={19} aria-hidden="true" />
           </Link>
         </div>
