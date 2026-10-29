@@ -16,7 +16,7 @@ export function Navbar() {
           aria-label={`${siteConfig.developerName}, home`}
         >
           {siteConfig.wordmark}
-          <span className="text-accent">.</span>
+          <span className="text-accent">.ks</span>
         </Link>
         <nav
           aria-label="Primary navigation"
