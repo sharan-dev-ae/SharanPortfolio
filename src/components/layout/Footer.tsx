@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { PortfolioViewCounter } from "./PortfolioViewCounter";
 import { Container } from "./Container";
 
 export function Footer() {
@@ -21,7 +20,6 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-col items-start gap-4 sm:items-end">
-          <PortfolioViewCounter />
           <nav
             aria-label="Footer links"
             className="flex flex-wrap gap-x-5 gap-y-2"

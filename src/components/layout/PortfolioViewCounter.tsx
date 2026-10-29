@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Eye } from "lucide-react";
 
-export function PortfolioViewCounter() {
+export function PortfolioViewCounter({ compact = false }: { compact?: boolean }) {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
@@ -25,7 +25,9 @@ export function PortfolioViewCounter() {
       title="Page views reported by Vercel Web Analytics"
     >
       <Eye className="text-accent" size={14} aria-hidden="true" />
-      <span>Portfolio visits</span>
+      <span className={compact ? "hidden xl:inline" : undefined}>
+        Portfolio visits
+      </span>
       <span className="text-foreground font-mono font-semibold">
         {views === null ? "—" : formatViews(views)}
       </span>

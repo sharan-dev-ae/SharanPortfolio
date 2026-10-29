@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { navigation } from "@/data/navigation";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
+import { PortfolioViewCounter } from "./PortfolioViewCounter";
 
 export function Navbar() {
   return (
@@ -37,6 +38,7 @@ export function Navbar() {
         >
           Resume <ArrowUpRight aria-hidden="true" size={15} />
         </Link>
+        <PortfolioViewCounter compact />
         <MobileMenu />
       </Container>
     </header>
