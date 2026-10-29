@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="order-1 lg:order-2">
           <FadeIn>
             <p className="text-accent text-xs font-semibold tracking-[.2em] uppercase">
-              The person behind the work
+              Driven by curiosity. Shaped by experience.
             </p>
           </FadeIn>
           <FadeIn delay={0.08}>
