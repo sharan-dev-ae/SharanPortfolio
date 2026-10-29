@@ -32,13 +32,15 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
-        <Link
-          href={siteConfig.resumePath}
-          className="border-border text-foreground hover:border-secondary hover:bg-surface hidden items-center gap-1.5 rounded-md border px-3.5 py-2 text-sm font-medium transition-colors lg:inline-flex"
-        >
-          Resume <ArrowUpRight aria-hidden="true" size={15} />
-        </Link>
-        <PortfolioViewCounter compact />
+        <div className="ml-auto flex items-center gap-2.5 lg:ml-0">
+          <Link
+            href={siteConfig.resumePath}
+            className="border-border text-foreground hover:border-secondary hover:bg-surface hidden items-center gap-1.5 rounded-md border px-3.5 py-2 text-sm font-medium transition-colors lg:inline-flex"
+          >
+            Resume <ArrowUpRight aria-hidden="true" size={15} />
+          </Link>
+          <PortfolioViewCounter compact />
+        </div>
         <MobileMenu />
       </Container>
     </header>
