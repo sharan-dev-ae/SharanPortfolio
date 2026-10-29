@@ -1,6 +1,6 @@
 # Engineering Portfolio
 
-A personal engineering portfolio for Sharan Kuniyil Shaji, a senior full-stack software engineer based in Dubai. The homepage presents a concise introduction, with dedicated About and Career pages. Some project details, metrics, links, and the resume still need verification.
+A personal engineering portfolio for Sharan Kuniyil Shaji, a senior full-stack software engineer based in Dubai. It includes dedicated About, Career, Projects, Prototypes, Contact, and Resume experiences, plus privacy-friendly portfolio visit reporting through Vercel Web Analytics.
 
 ## Stack
 
@@ -17,6 +17,15 @@ npm run dev
 ```
 
 Open http://localhost:3000. Set `NEXT_PUBLIC_SITE_URL` to the production domain before deployment.
+
+## Environment variables
+
+Copy `.env.example` to `.env.local` for local development. Configure these values in Vercel for production:
+
+- `NEXT_PUBLIC_SITE_URL` — canonical production URL used by site metadata.
+- `VERCEL_API_TOKEN` — server-only, project-scoped access token used to read the aggregated portfolio visit count from Vercel Web Analytics.
+
+Vercel supplies `VERCEL_PROJECT_ID` and `VERCEL_ORG_ID` automatically. Never commit access-token values.
 
 ## Scripts
 
@@ -38,4 +47,4 @@ Open http://localhost:3000. Set `NEXT_PUBLIC_SITE_URL` to the production domain 
 - `src/lib` — shared utilities and metadata
 - `public` — supplied portrait, abstract project previews, and future assets
 
-Deployment target: Vercel. Before publishing, confirm project details, replace placeholder email and social links, supply a resume, and add verified impact figures.
+Deployment target: Vercel. Keep project details, social links, resume content, and impact figures accurate and verifiable.
