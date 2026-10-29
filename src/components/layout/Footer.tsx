@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { PortfolioViewCounter } from "./PortfolioViewCounter";
 import { Container } from "./Container";
 
 export function Footer() {
@@ -19,33 +20,36 @@ export function Footer() {
             Next.js and TypeScript.
           </p>
         </div>
-        <nav
-          aria-label="Footer links"
-          className="flex flex-wrap gap-x-5 gap-y-2"
-        >
-          <a
-            href={siteConfig.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground"
+        <div className="flex flex-col items-start gap-4 sm:items-end">
+          <PortfolioViewCounter />
+          <nav
+            aria-label="Footer links"
+            className="flex flex-wrap gap-x-5 gap-y-2"
           >
-            GitHub
-          </a>
-          <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="hover:text-foreground"
-          >
-            Email
-          </a>
-        </nav>
+            <a
+              href={siteConfig.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground"
+            >
+              GitHub
+            </a>
+            <a
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="hover:text-foreground"
+            >
+              Email
+            </a>
+          </nav>
+        </div>
       </Container>
     </footer>
   );
