@@ -52,7 +52,7 @@ function readCount(payload: unknown): number | null {
   if (!payload || typeof payload !== "object") return null;
 
   const value = payload as Record<string, unknown>;
-  for (const key of ["count", "total", "value", "data"]) {
+  for (const key of ["pageviews", "visitors", "count", "total", "value", "data"]) {
     if (typeof value[key] === "number") return value[key];
     if (typeof value[key] === "string" && value[key] !== "") {
       const parsed = Number(value[key]);
