@@ -29,7 +29,7 @@ export function AboutPreview() {
         <FadeIn className="order-1 max-w-2xl lg:order-2">
           <SectionHeading
             id="about-title"
-            eyebrow="The person behind the systems"
+            eyebrow="Driven by curiosity. Shaped by experience."
             title="About Me"
           />
           <div className="text-secondary mt-7 space-y-5 text-base leading-8 sm:text-lg">
